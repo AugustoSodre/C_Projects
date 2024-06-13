@@ -17,5 +17,29 @@ int main(void){
         printf("%d ", array[i]);
     }
 
-    return 0;
+    int num;
+    printf("\nGive me a number: ");
+    scanf("%d", &num);
+
+    int high = size - 1;
+    int low = 0;
+    int pos = -1;
+    for (int i = 0; i < size; i++){
+        int mid = (high + low) / 2;
+        if (array[mid] == num){
+            pos = mid;
+            printf("Index position: %d\n", pos);
+            return 0;
+        } else if (num > array[mid]){
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    if (pos == -1){
+        printf("Element not found\n");
+        return 1;
+    }
+
+
 }
