@@ -33,7 +33,7 @@ struct node *inserir(struct node *head, int numero){
 struct node *remover(struct node *head, int numero){
     //Caso fácil: Lista vazia
     if (head == NULL){
-        return head;
+        return NULL;
     }
 
     //Caso médio: Remover primeiro elemento
@@ -57,7 +57,7 @@ struct node *remover(struct node *head, int numero){
 
     //Caso difícil: Remover no meio ou final
     struct node *ponteiro = head;
-    while ( (ponteiro -> proximo != head)&& (ponteiro -> proximo -> numero != numero) ){ //Direcionando ponteiro para o elemento anterior ao número desejado
+    while ( (ponteiro -> proximo != head) && (ponteiro -> proximo -> numero != numero) ){ //Direcionando ponteiro para o elemento anterior ao número desejado
         ponteiro = ponteiro -> proximo;
     }
     if (ponteiro -> proximo == head){ //Percorri a lista e não achei
